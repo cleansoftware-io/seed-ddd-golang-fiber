@@ -1,10 +1,8 @@
 package internal
 
 import (
-	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/sirupsen/logrus"
 	"github.con/tgarcia/seed-golang-server/internal/config"
 )
@@ -18,44 +16,17 @@ type Bootstrap struct {
 func NewBootstrap() (*Bootstrap, error) {
 
 	logger := config.SetupLogging()
+	app := config.SetupFiber(logger)
+	config.SetupPrometheus(app)
 
-	requestLatency := config.NewRequestLatency()
-
-	registry := config.SetupPrometheus(requestLatency)
-
-	app := config.SetupFiber(requestLatency)
-	// GET /flights/LAX-SFO
-	app.Get("/flights/:from-:to", func(c *fiber.Ctx) error {
-		msg := fmt.Sprintf("💸 From: %s, To: %s", c.Params("from"), c.Params("to"))
-		return c.SendString(msg) // => 💸 From: LAX, To: SFO
-	})
-	app.Get("/metrics", func(c *fiber.Ctx) error {
-		promhttp.HandlerFor(registry, promhttp.HandlerOpts{})
-		return c.SendString("Hello, World 👋!")
-	})
-
-	// GET /dictionary.txt
-	app.Get("/:file.:ext", func(c *fiber.Ctx) error {
-		msg := fmt.Sprintf("📃 %s.%s", c.Params("file"), c.Params("ext"))
-		return c.SendString(msg) // => 📃 dictionary.txt
-	})
-
-	// GET /john/75
-	app.Get("/:name/:age/:gender?", func(c *fiber.Ctx) error {
-		msg := fmt.Sprintf("👴 %s is %s years old", c.Params("name"), c.Params("age"))
-		return c.SendString(msg) // => 👴 john is 75 years old
-	})
-
-	// GET /john
-	app.Get("/:name", func(c *fiber.Ctx) error {
-		msg := fmt.Sprintf("Hello, %s 👋!", c.Params("name"))
-		return c.SendString(msg) // => Hello john 👋!
+	app.Get("/health", func(c *fiber.Ctx) error {
+		msg := "Green"
+		return c.SendString(msg)
 	})
 
 	return &Bootstrap{
-		App:      app,
-		Logger:   logger,
-		Registry: registry,
+		App:    app,
+		Logger: logger,
 	}, nil
 }
 
