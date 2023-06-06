@@ -1,14 +1,18 @@
 package main
 
-import bootstrap "github.con/tgarcia/seed-golang-server/internal"
+import (
+	"github.con/tgarcia/seed-golang-server/cmd/products"
+	"github.con/tgarcia/seed-golang-server/cmd/users"
+)
 
 func main() {
-	bootstrap, err := bootstrap.NewBootstrap()
-	if err != nil {
-		panic(err)
-	}
+	// Configurar la inyección de dependencias y otros aspectos globales de la aplicación
 
-	if err := bootstrap.Start(); err != nil {
-		panic(err)
-	}
+	// Inicializar el contexto de usuarios
+	users.Run()
+
+	// Inicializar el contexto de productos
+	products.Run()
+
+	// Otras inicializaciones o lógica de la aplicación
 }
