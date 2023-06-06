@@ -3,15 +3,15 @@ module github.con/tgarcia/seed-golang-server
 go 1.20
 
 require (
+	github.com/ansrivas/fiberprometheus/v2 v2.6.0
 	github.com/gofiber/fiber/v2 v2.46.0
 	github.com/prometheus/client_golang v1.14.0
 	github.com/sirupsen/logrus v1.9.3
-	github.com/stretchr/testify v1.7.0
+	github.com/stretchr/testify v1.8.4
 )
 
 require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
-	github.com/ansrivas/fiberprometheus/v2 v2.6.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
