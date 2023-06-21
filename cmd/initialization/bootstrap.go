@@ -1,10 +1,10 @@
-package internal
+package initialization
 
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/sirupsen/logrus"
-	"github.con/tgarcia/seed-golang-server/internal/config"
+	"github.con/tgarcia/seed-ddd-golang-fiber/internal/config"
 )
 
 type Bootstrap struct {

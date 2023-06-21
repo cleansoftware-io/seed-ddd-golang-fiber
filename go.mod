@@ -1,4 +1,4 @@
-module github.con/tgarcia/seed-golang-server
+module github.con/tgarcia/seed-ddd-golang-fiber
 
 go 1.20
 

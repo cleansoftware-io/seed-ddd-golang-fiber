@@ -1,14 +1,14 @@
 package main
 
 import (
-	"github.con/tgarcia/seed-golang-server/cmd/products"
-	"github.con/tgarcia/seed-golang-server/cmd/users"
-	"github.con/tgarcia/seed-golang-server/internal"
+	"github.con/tgarcia/seed-ddd-golang-fiber/cmd/initialization"
+	"github.con/tgarcia/seed-ddd-golang-fiber/cmd/products"
+	"github.con/tgarcia/seed-ddd-golang-fiber/cmd/users"
 )
 
 func main() {
 	// Configurar la inyección de dependencias y otros aspectos globales de la aplicación
-	bootstrap, err := internal.NewBootstrap()
+	bootstrap, err := initialization.NewBootstrap()
 	if err != nil {
 		panic(err)
 	}
@@ -20,4 +20,9 @@ func main() {
 	products.Run(bootstrap)
 
 	// Otras inicializaciones o lógica de la aplicación
+
+	if err := bootstrap.App.Listen(":3000"); err != nil {
+		bootstrap.Logger.Fatal(err)
+		panic(err)
+	}
 }

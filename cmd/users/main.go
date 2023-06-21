@@ -1,7 +1,7 @@
 package users
 
-import "github.con/tgarcia/seed-golang-server/internal"
+import "github.con/tgarcia/seed-ddd-golang-fiber/cmd/initialization"
 
-func Run(*internal.Bootstrap) {
+func Run(bootstrap *initialization.Bootstrap) {
 
 }
