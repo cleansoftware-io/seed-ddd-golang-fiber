@@ -7,7 +7,7 @@ import (
 import "github.con/tgarcia/seed-ddd-golang-fiber/internal/infra/controllers"
 import "github.con/tgarcia/seed-ddd-golang-fiber/internal/application"
 
-func Run(bootstrap *initialization.Bootstrap) {
+func Run(bootstrap initialization.Bootstrap) {
 
 	logger := adapters.NewLoggerImpl(bootstrap.Logger)
 

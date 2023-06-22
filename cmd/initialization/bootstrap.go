@@ -2,35 +2,31 @@ package initialization
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/prometheus/client_golang/prometheus"
 	"github.com/sirupsen/logrus"
 	"github.con/tgarcia/seed-ddd-golang-fiber/internal/config"
 )
 
 type Bootstrap struct {
-	Logger   *logrus.Logger
-	Registry *prometheus.Registry
-	App      *fiber.App
+	Logger *logrus.Logger
+	App    *fiber.App
 }
 
-func NewBootstrap() (*Bootstrap, error) {
-
-	logger := config.SetupLogging()
-	app := config.SetupFiber(logger)
+func ProvideBootstrap(app *fiber.App, logger *logrus.Logger) Bootstrap {
 	config.SetupPrometheus(app)
+	setupHealth(app)
+	return Bootstrap{
+		App:    app,
+		Logger: logger,
+	}
+}
 
-	app.Get("/health", func(c *fiber.Ctx) error {
+func setupHealth(app *fiber.App) fiber.Router {
+	return app.Get("/health", func(c *fiber.Ctx) error {
 		msg := "Green"
 		return c.SendString(msg)
 	})
-
-	return &Bootstrap{
-		App:    app,
-		Logger: logger,
-	}, nil
 }
 
-// Start inicia el servidor HTTP.
 func (b *Bootstrap) Start() error {
 	return b.App.Listen(":3000")
 }

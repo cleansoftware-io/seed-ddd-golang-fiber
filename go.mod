@@ -17,7 +17,9 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/gofiber/adaptor/v2 v2.2.1 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
+	github.com/google/subcommands v1.0.1 // indirect
 	github.com/google/uuid v1.3.0 // indirect
+	github.com/google/wire v0.5.0 // indirect
 	github.com/klauspost/compress v1.16.5 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
@@ -36,7 +38,9 @@ require (
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.47.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
+	golang.org/x/mod v0.7.0 // indirect
 	golang.org/x/sys v0.8.0 // indirect
+	golang.org/x/tools v0.4.0 // indirect
 	google.golang.org/protobuf v1.30.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
