@@ -16,8 +16,6 @@ func NewProducts(app *fiber.App, logger ports.Logger, deactivateProducts *applic
 }
 
 func (p *Products) RegisterRoutes() {
-	// p.app.Post("/products", p.Create)
-	// p.app.Put("/products/:id", p.Update)
 	p.logger.Info("RegisterRoutes")
 	p.app.Delete("/products", p.Deactivate)
 }

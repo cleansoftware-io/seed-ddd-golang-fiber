@@ -10,9 +10,8 @@ type DeactivateProductsIml struct {
 	logger ports.Logger
 }
 
-func NewDeactivateProductsIml(logger ports.Logger) *DeactivateProductsIml {
-	logger.Info("DeactivateProductsIml")
-	return &DeactivateProductsIml{
+func ProvideDeactivateProductsIml(logger ports.Logger) DeactivateProductsIml {
+	return DeactivateProductsIml{
 		logger: logger,
 	}
 }

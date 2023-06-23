@@ -1,18 +1,18 @@
-package products
+package initialization
 
 import (
-	"cleansoftware.io/ddd/fiber/seed/cmd/initialization"
-	"cleansoftware.io/ddd/fiber/seed/internal/products/infra/adapters"
+	"cleansoftware.io/ddd/fiber/seed/internal/products/domain/services"
 )
 import "cleansoftware.io/ddd/fiber/seed/internal/products/infra/controllers"
 import "cleansoftware.io/ddd/fiber/seed/internal/products/application"
 
-func Run(bootstrap initialization.Bootstrap) {
+type ProductInitialization struct {
+	Bootstrap Bootstrap
+}
 
-	logger := bootstrap.Logger
+func ProvideProductInitialization(bootstrap Bootstrap, productsService services.Products) ProductInitialization {
 
-	productsService := adapters.NewDeactivateProductsIml(logger)
-	deactivateProductUseCase := application.NewDeactivateProductUseCase(logger, productsService)
+	deactivateProductUseCase := application.NewDeactivateProductUseCase(bootstrap.Logger, productsService)
 
 	// ... more use cases
 	// ... more services
@@ -22,5 +22,7 @@ func Run(bootstrap initialization.Bootstrap) {
 
 	productsControllers := controllers.NewProducts(bootstrap.App, bootstrap.Logger, deactivateProductUseCase)
 	productsControllers.RegisterRoutes()
-
+	return ProductInitialization{
+		Bootstrap: bootstrap,
+	}
 }
