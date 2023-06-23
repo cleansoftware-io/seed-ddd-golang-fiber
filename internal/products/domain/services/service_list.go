@@ -7,10 +7,12 @@ import (
 
 type ServiceList struct {
 	DeactivateProduct ports.Products
+	//... inject other services
 }
 
-func ProvideServiceList(deactivateProduct adapters.DeactivateProductsIml) *ServiceList {
-	return &ServiceList{
+func ProvideServiceList(deactivateProduct adapters.DeactivateProductsIml) ServiceList {
+	return ServiceList{
 		DeactivateProduct: deactivateProduct,
+		//... inject other services
 	}
 }
