@@ -1,7 +1,7 @@
 package adapters
 
 import (
-	"cleansoftware.io/ddd/fiber/seed/internal/domain/ports"
+	"cleansoftware.io/ddd/fiber/seed/internal/products/domain/ports"
 	"github.com/sirupsen/logrus"
 )
 

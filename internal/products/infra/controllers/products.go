@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"cleansoftware.io/ddd/fiber/seed/internal/application"
-	"cleansoftware.io/ddd/fiber/seed/internal/domain/dto/request"
-	"cleansoftware.io/ddd/fiber/seed/internal/domain/ports"
+	"cleansoftware.io/ddd/fiber/seed/internal/products/application"
+	"cleansoftware.io/ddd/fiber/seed/internal/products/domain/dto/request"
+	"cleansoftware.io/ddd/fiber/seed/internal/products/domain/ports"
 	"github.com/gofiber/fiber/v2"
 )
 

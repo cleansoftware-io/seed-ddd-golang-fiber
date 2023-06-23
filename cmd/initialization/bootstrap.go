@@ -2,7 +2,7 @@ package initialization
 
 import (
 	"cleansoftware.io/ddd/fiber/seed/internal/config"
-	"cleansoftware.io/ddd/fiber/seed/internal/domain/ports"
+	"cleansoftware.io/ddd/fiber/seed/internal/products/domain/ports"
 	"github.com/gofiber/fiber/v2"
 )
 

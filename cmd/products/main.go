@@ -2,10 +2,10 @@ package products
 
 import (
 	"cleansoftware.io/ddd/fiber/seed/cmd/initialization"
-	"cleansoftware.io/ddd/fiber/seed/internal/infra/adapters"
+	"cleansoftware.io/ddd/fiber/seed/internal/products/infra/adapters"
 )
-import "cleansoftware.io/ddd/fiber/seed/internal/infra/controllers"
-import "cleansoftware.io/ddd/fiber/seed/internal/application"
+import "cleansoftware.io/ddd/fiber/seed/internal/products/infra/controllers"
+import "cleansoftware.io/ddd/fiber/seed/internal/products/application"
 
 func Run(bootstrap initialization.Bootstrap) {
 

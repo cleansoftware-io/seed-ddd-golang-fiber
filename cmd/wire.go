@@ -6,7 +6,7 @@ package main
 import (
 	"cleansoftware.io/ddd/fiber/seed/cmd/initialization"
 	"cleansoftware.io/ddd/fiber/seed/internal/config"
-	"cleansoftware.io/ddd/fiber/seed/internal/infra/adapters"
+	"cleansoftware.io/ddd/fiber/seed/internal/products/infra/adapters"
 	"github.com/google/wire"
 )
 
