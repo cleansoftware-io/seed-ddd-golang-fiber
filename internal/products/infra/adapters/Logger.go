@@ -14,7 +14,9 @@ func ProvideLoggerImpl(logger *logrus.Logger) ports.Logger {
 		logger: logger,
 	}
 }
-
+func (l *LoggerImpl) InfoP(format string, args ...interface{}) {
+	l.logger.Infof(format, &args)
+}
 func (l *LoggerImpl) Info(args ...interface{}) {
 	l.logger.Info(&args)
 }
