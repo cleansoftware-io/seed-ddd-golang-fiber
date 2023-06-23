@@ -1,4 +1,4 @@
-package services
+package ports
 
 import (
 	"cleansoftware.io/ddd/fiber/seed/internal/products/domain/dto/request"

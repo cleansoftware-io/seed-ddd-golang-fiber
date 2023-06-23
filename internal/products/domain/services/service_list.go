@@ -1,9 +1,12 @@
 package services
 
-import "cleansoftware.io/ddd/fiber/seed/internal/products/infra/adapters"
+import (
+	"cleansoftware.io/ddd/fiber/seed/internal/products/domain/ports"
+	"cleansoftware.io/ddd/fiber/seed/internal/products/infra/adapters"
+)
 
 type ServiceList struct {
-	DeactivateProduct Products
+	DeactivateProduct ports.Products
 }
 
 func ProvideServiceList(deactivateProduct adapters.DeactivateProductsIml) *ServiceList {

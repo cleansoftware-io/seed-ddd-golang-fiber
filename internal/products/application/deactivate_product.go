@@ -4,7 +4,6 @@ import (
 	"cleansoftware.io/ddd/fiber/seed/internal/products/domain/dto/request"
 	"cleansoftware.io/ddd/fiber/seed/internal/products/domain/dto/response"
 	"cleansoftware.io/ddd/fiber/seed/internal/products/domain/ports"
-	"cleansoftware.io/ddd/fiber/seed/internal/products/domain/services"
 )
 
 func (u DeactivateProductUseCase) DeactivateProduct(productDto request.DeactivateProductDto) (error, *response.DeactivateProductDto) {
@@ -20,10 +19,10 @@ func (u DeactivateProductUseCase) DeactivateProduct(productDto request.Deactivat
 
 type DeactivateProductUseCase struct {
 	logger  ports.Logger
-	service services.Products
+	service ports.Products
 }
 
-func NewDeactivateProductUseCase(logger ports.Logger, products services.Products) *DeactivateProductUseCase {
+func NewDeactivateProductUseCase(logger ports.Logger, products ports.Products) *DeactivateProductUseCase {
 	return &DeactivateProductUseCase{
 		logger:  logger,
 		service: products,

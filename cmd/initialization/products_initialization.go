@@ -1,7 +1,7 @@
 package initialization
 
 import (
-	"cleansoftware.io/ddd/fiber/seed/internal/products/domain/services"
+	"cleansoftware.io/ddd/fiber/seed/internal/products/domain/ports"
 )
 import "cleansoftware.io/ddd/fiber/seed/internal/products/infra/controllers"
 import "cleansoftware.io/ddd/fiber/seed/internal/products/application"
@@ -10,7 +10,7 @@ type ProductInitialization struct {
 	Bootstrap Bootstrap
 }
 
-func ProvideProductInitialization(bootstrap Bootstrap, productsService services.Products) ProductInitialization {
+func ProvideProductInitialization(bootstrap Bootstrap, productsService ports.Products) ProductInitialization {
 
 	deactivateProductUseCase := application.NewDeactivateProductUseCase(bootstrap.Logger, productsService)
 
