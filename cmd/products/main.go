@@ -1,11 +1,11 @@
 package products
 
 import (
-	"github.con/tgarcia/seed-ddd-golang-fiber/cmd/initialization"
-	"github.con/tgarcia/seed-ddd-golang-fiber/internal/infra/adapters"
+	"cleansoftware.io/ddd/fiber/seed/cmd/initialization"
+	"cleansoftware.io/ddd/fiber/seed/internal/infra/adapters"
 )
-import "github.con/tgarcia/seed-ddd-golang-fiber/internal/infra/controllers"
-import "github.con/tgarcia/seed-ddd-golang-fiber/internal/application"
+import "cleansoftware.io/ddd/fiber/seed/internal/infra/controllers"
+import "cleansoftware.io/ddd/fiber/seed/internal/application"
 
 func Run(bootstrap initialization.Bootstrap) {
 

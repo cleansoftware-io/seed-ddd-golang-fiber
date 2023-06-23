@@ -1,10 +1,10 @@
 package application
 
 import (
-	"github.con/tgarcia/seed-ddd-golang-fiber/internal/domain/dto/request"
-	"github.con/tgarcia/seed-ddd-golang-fiber/internal/domain/dto/response"
-	"github.con/tgarcia/seed-ddd-golang-fiber/internal/domain/ports"
-	"github.con/tgarcia/seed-ddd-golang-fiber/internal/domain/services"
+	"cleansoftware.io/ddd/fiber/seed/internal/domain/dto/request"
+	"cleansoftware.io/ddd/fiber/seed/internal/domain/dto/response"
+	"cleansoftware.io/ddd/fiber/seed/internal/domain/ports"
+	"cleansoftware.io/ddd/fiber/seed/internal/domain/services"
 )
 
 func (u DeactivateProductUseCase) DeactivateProduct(productDto request.DeactivateProductDto) (error, *response.DeactivateProductDto) {

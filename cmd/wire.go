@@ -4,9 +4,9 @@
 package main
 
 import (
+	"cleansoftware.io/ddd/fiber/seed/cmd/initialization"
+	"cleansoftware.io/ddd/fiber/seed/internal/config"
 	"github.com/google/wire"
-	"github.con/tgarcia/seed-ddd-golang-fiber/cmd/initialization"
-	"github.con/tgarcia/seed-ddd-golang-fiber/internal/config"
 )
 
 func InitializeApplication() initialization.Bootstrap {

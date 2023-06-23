@@ -1,8 +1,8 @@
 package adapters
 
 import (
+	"cleansoftware.io/ddd/fiber/seed/internal/domain/ports"
 	"github.com/sirupsen/logrus"
-	"github.con/tgarcia/seed-ddd-golang-fiber/internal/domain/ports"
 )
 
 type LoggerImpl struct {

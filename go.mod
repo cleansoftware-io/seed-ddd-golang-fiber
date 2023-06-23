@@ -1,4 +1,4 @@
-module github.con/tgarcia/seed-ddd-golang-fiber
+module cleansoftware.io/ddd/fiber/seed
 
 go 1.20
 

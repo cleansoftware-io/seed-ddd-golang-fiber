@@ -1,6 +1,6 @@
 package users
 
-import "github.con/tgarcia/seed-ddd-golang-fiber/cmd/initialization"
+import "cleansoftware.io/ddd/fiber/seed/cmd/initialization"
 
 func Run(bootstrap initialization.Bootstrap) {
 

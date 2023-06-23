@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.con/tgarcia/seed-ddd-golang-fiber/internal/domain/dto/request"
-	"github.con/tgarcia/seed-ddd-golang-fiber/internal/domain/dto/response"
+	"cleansoftware.io/ddd/fiber/seed/internal/domain/dto/request"
+	"cleansoftware.io/ddd/fiber/seed/internal/domain/dto/response"
 )
 
 type Products interface {

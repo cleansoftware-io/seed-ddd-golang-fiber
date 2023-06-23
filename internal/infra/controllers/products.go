@@ -1,10 +1,10 @@
 package controllers
 
 import (
+	"cleansoftware.io/ddd/fiber/seed/internal/application"
+	"cleansoftware.io/ddd/fiber/seed/internal/domain/dto/request"
+	"cleansoftware.io/ddd/fiber/seed/internal/domain/ports"
 	"github.com/gofiber/fiber/v2"
-	"github.con/tgarcia/seed-ddd-golang-fiber/internal/application"
-	"github.con/tgarcia/seed-ddd-golang-fiber/internal/domain/dto/request"
-	"github.con/tgarcia/seed-ddd-golang-fiber/internal/domain/ports"
 )
 
 func NewProducts(app *fiber.App, logger ports.Logger, deactivateProducts *application.DeactivateProductUseCase) *Products {

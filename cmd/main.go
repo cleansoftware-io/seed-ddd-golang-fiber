@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.con/tgarcia/seed-ddd-golang-fiber/cmd/products"
-	"github.con/tgarcia/seed-ddd-golang-fiber/cmd/users"
+	"cleansoftware.io/ddd/fiber/seed/cmd/products"
+	"cleansoftware.io/ddd/fiber/seed/cmd/users"
 )
 
 func main() {

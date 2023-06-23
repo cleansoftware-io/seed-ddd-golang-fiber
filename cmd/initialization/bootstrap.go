@@ -1,9 +1,9 @@
 package initialization
 
 import (
+	"cleansoftware.io/ddd/fiber/seed/internal/config"
 	"github.com/gofiber/fiber/v2"
 	"github.com/sirupsen/logrus"
-	"github.con/tgarcia/seed-ddd-golang-fiber/internal/config"
 )
 
 type Bootstrap struct {
