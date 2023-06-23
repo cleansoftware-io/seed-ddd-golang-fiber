@@ -2,16 +2,16 @@ package initialization
 
 import (
 	"cleansoftware.io/ddd/fiber/seed/internal/config"
+	"cleansoftware.io/ddd/fiber/seed/internal/domain/ports"
 	"github.com/gofiber/fiber/v2"
-	"github.com/sirupsen/logrus"
 )
 
 type Bootstrap struct {
-	Logger *logrus.Logger
+	Logger ports.Logger
 	App    *fiber.App
 }
 
-func ProvideBootstrap(app *fiber.App, logger *logrus.Logger) Bootstrap {
+func ProvideBootstrap(app *fiber.App, logger ports.Logger) Bootstrap {
 	config.SetupPrometheus(app)
 	setupHealth(app)
 	return Bootstrap{

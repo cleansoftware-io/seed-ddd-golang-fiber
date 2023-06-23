@@ -6,10 +6,11 @@ package main
 import (
 	"cleansoftware.io/ddd/fiber/seed/cmd/initialization"
 	"cleansoftware.io/ddd/fiber/seed/internal/config"
+	"cleansoftware.io/ddd/fiber/seed/internal/infra/adapters"
 	"github.com/google/wire"
 )
 
 func InitializeApplication() initialization.Bootstrap {
-	wire.Build(config.SetupFiber, config.SetupLogging, initialization.ProvideBootstrap)
+	wire.Build(config.SetupFiber, config.SetupLogging, adapters.ProvideLoggerImpl, initialization.ProvideBootstrap)
 	return initialization.Bootstrap{}
 }

@@ -9,7 +9,7 @@ type LoggerImpl struct {
 	logger *logrus.Logger
 }
 
-func NewLoggerImpl(logger *logrus.Logger) ports.Logger {
+func ProvideLoggerImpl(logger *logrus.Logger) ports.Logger {
 	return &LoggerImpl{
 		logger: logger,
 	}

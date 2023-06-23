@@ -9,7 +9,7 @@ import "cleansoftware.io/ddd/fiber/seed/internal/application"
 
 func Run(bootstrap initialization.Bootstrap) {
 
-	logger := adapters.NewLoggerImpl(bootstrap.Logger)
+	logger := bootstrap.Logger
 
 	productsService := adapters.NewDeactivateProductsIml(logger)
 	deactivateProductUseCase := application.NewDeactivateProductUseCase(logger, productsService)
